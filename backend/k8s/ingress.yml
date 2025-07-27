@@ -4,7 +4,7 @@ metadata:
   name: back-ingress
 spec:
   rules:
-  - hosts: back.app
+  - host: back.app
     http:
       paths:
       - path: /api
@@ -14,5 +14,6 @@ spec:
             name: back-service
             port:
               number: 5000
+
       
     
