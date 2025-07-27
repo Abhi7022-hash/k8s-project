@@ -1,5 +1,5 @@
 apiVersion: apps/v1
-Kind: Deployment
+kind: Deployment
 metadata:
   name: back-deploy
 spec:
@@ -7,7 +7,7 @@ spec:
   selector:
     matchLabels:
       app: back-label
-  templates:
+  template:
     metadata:
       labels:
         app: back-label
@@ -16,18 +16,20 @@ spec:
       - name: back-container
         image: abhishek661/back-image:latest
         ports:
-        -  containerPort: 5000
+        - containerPort: 5000
         env:
         - name: MYSQL_HOST
-        - name: mysql-service
+          value: mysql-service
         - name: MYSQL_USER
-        - value: root
+          value: root
         - name: MYSQL_PASSWORD
           valueFrom:
             secretKeyRef:
-              name: mysql_secret
-              Key: password
+              name: mysql-secret
+              key: password
         - name: MYSQL_DATABASE
           valueFrom:
             configMapKeyRef:
-              name: 
+              name: back-config
+              key: MYSQL_DATABASE
+
