@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head><title>Product Catalog</title></head>
+<body>
+  <h1>Products</h1>
+  <form method="POST">
+    <input name="name" placeholder="Product Name" required>
+    <input name="price" type="number" step="0.01" placeholder="Price" required>
+    <button type="submit">Add</button>
+  </form>
+  <ul>
+    {% for product in products %}
+      <li>{{ product.name }} - ₹{{ product.price }}</li>
+    {% endfor %}
+  </ul>
+</body>
+</html>
