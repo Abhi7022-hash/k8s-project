@@ -2,3 +2,12 @@ apiVersion: apps/v1
 Kind: Deployment
 metadata:
   name: back-deploy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: back-label
+  templates:
+    metadata:
+      labels:
+        app: back-label
