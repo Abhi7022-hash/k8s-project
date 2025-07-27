@@ -11,3 +11,12 @@ spec:
     metadata:
       labels:
         app: back-label
+    spec:
+      containers:
+      - name: back-container
+        image: abhishek661/back-image:latest
+        ports:
+        -  containerPort: 5000
+        env:
+        - name: MYSQL_HOST
+        - name: mysql-service
