@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: frontend-service
+  name: front-service
 spec:
   selector:
     app: front-label
