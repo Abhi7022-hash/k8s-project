@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: Ingress
+metadata:
+  name: back-ingres
+spec:
+  rules:
+  - hosts: backend.app
+    http:
+    
