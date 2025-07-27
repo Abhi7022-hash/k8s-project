@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1
+kind: ingress
+metadata:
+  name: front-ingress
+spec:
+  rules:
+  - host: front.app
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: front-service-2
+            port:
+              number: 8000
