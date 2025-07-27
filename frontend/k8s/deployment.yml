@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: front-part
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: front-label
+  template:
+    metadata:
+      labels:
+        app: front-label
+    spec:
+      containers:
+      - name: front-container-2
+        image: abhishek661/front-image:latest
+        ports:
+        - containerPort: 8000
